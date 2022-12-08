@@ -1,1 +1,9 @@
-<p>pet-detail works!</p>
+<div *ngIf="pet">
+    <h1>{{pet.name}}</h1>
+    <h2>{{pet.species}}</h2>
+    <p>{{pet.price}} euros</p>
+    <p *ngIf="pet.isAvailable">Vendu</p>
+    <p *ngIf="!pet.isAvailable">Disponible</p>
+    
+    
+    </div>
