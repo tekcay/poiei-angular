@@ -8,10 +8,15 @@ export class PetService {
 
   pets: IPet[] = [];
   selectedPet: IPet|undefined|null = null;
+  isCreatingPet: boolean = false;
 
   constructor() {
     this.createPets();
    }
+
+  togglePetCreation(): void {
+    this.isCreatingPet = !this.isCreatingPet;
+  } 
 
   onSelectPet(petId: number): void {
     this.selectedPet = this.pets.find(pet => pet.id === petId);
