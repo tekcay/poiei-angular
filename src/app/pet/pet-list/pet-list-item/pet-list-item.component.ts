@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IPet } from '../../model/pet';
+import { PetService } from '../../pet.service';
 
 @Component({
   selector: 'app-pet-list-item',
@@ -9,6 +10,9 @@ import { IPet } from '../../model/pet';
 export class PetListItemComponent {
   @Input() pet!: IPet;
 
-  constructor() {}
+  constructor(private petService: PetService) {}
 
+  get selectedPetId(): number {
+    return this.petService.selectedPet ? this.petService.selectedPet.id : 0;
+  }
 }
