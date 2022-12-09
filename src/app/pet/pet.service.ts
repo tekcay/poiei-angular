@@ -38,15 +38,30 @@ export class PetService {
     for (let i = 0; i < names.length; i++) {
       const pet = {
         id: i + 1,
-         name: names[i],
-          species: species[i],
-           isAvailable: isAvailables[i],
-            price: prices[i],
-            imageUrl: imagesURL[i]
-          };
+        name: names[i],
+        species: species[i],
+        isAvailable: isAvailables[i],
+        price: prices[i],
+        imageUrl: imagesURL[i]
+      };
       this.pets.push(pet);
     }   
   }
+
+  createAndRegisterPet(name: string, species: Species, price: number, isAvailable: boolean, url: string):void {
+    let id = 0;
+    //Seeks the highest id in the pets array
+    this.pets.forEach(pet => id = Math.max(id, pet.id));
+    this.pets.push({
+      id: id + 1,
+      name: name,
+      species: species,
+      isAvailable: isAvailable,
+      price: price,
+      imageUrl: url
+    });
+  }
+
 
 
 }

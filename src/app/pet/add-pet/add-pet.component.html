@@ -13,6 +13,6 @@
 
     <input type="text" formControlName="imageURL" placeholder="URL de l'image"/>
 
-    <button>Créer mon animal</button>
+    <button [disabled]="petForm.invalid">Créer mon animal</button>
 
 </form>
