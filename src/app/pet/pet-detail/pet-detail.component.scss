@@ -8,6 +8,12 @@
         display: flex; 
         flex-direction: column; 
         justify-content: space-around; 
+
+        img {
+            max-width: 50%;
+            max-height: 50%;
+            margin: auto;
+        }
     }
     .price {
          font-size: 200%; 
