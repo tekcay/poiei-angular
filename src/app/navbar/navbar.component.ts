@@ -10,8 +10,8 @@ export class NavbarComponent {
 
   constructor(private petService: PetService) {}
 
-  onTogglePetCreation() {
-    this.petService.togglePetCreation;  
+  onTogglePetCreation(): void {
+    this.petService.togglePetCreation();  
   }
 
 }

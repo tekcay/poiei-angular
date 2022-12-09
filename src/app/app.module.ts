@@ -8,6 +8,7 @@ import { PetListItemComponent } from './pet/pet-list/pet-list-item/pet-list-item
 import { PetListComponent } from './pet/pet-list/pet-list.component';
 import { PetComponent } from './pet/pet.component';
 import { AddPetComponent } from './pet/add-pet/add-pet.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddPetComponent } from './pet/add-pet/add-pet.component';
     AddPetComponent   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
