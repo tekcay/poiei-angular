@@ -1,18 +1,18 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IPet } from '../../model/pet';
+import { PetService } from '../../pet.service';
 
 @Component({
   selector: 'app-pet-list-item',
   templateUrl: './pet-list-item.component.html',
   styleUrls: ['./pet-list-item.component.scss']
 })
-export class PetListItemComponent implements OnInit {
+export class PetListItemComponent {
   @Input() pet!: IPet;
 
-  constructor() {}
+  constructor(private petService: PetService) {}
 
-  ngOnInit(): void {
-
+  get selectedPetId(): number {
+    return this.petService.selectedPet ? this.petService.selectedPet.id : 0;
   }
-
 }

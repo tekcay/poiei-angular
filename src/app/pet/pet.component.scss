@@ -1,9 +1,14 @@
 .pet {
     height: 100%;
-    display: flex;
+    
+    .pet-read-container {
+        display: flex;
+        height: 100%;
+
+    }
 
     app-pet-list {
-        flex: 1;
+          flex: 1;
     }
 
     app-pet-detail {

@@ -1,24 +1,23 @@
-import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component } from '@angular/core';
 import { IPet } from '../model/pet';
+import { PetService } from '../pet.service';
 
 @Component({
   selector: 'app-pet-list',
   templateUrl: './pet-list.component.html',
-  styleUrls: ['./pet-list.component.scss']
+  styleUrls: ['./pet-list.component.scss'],
 })
-export class PetListComponent implements OnInit {
-  @Input() petList: IPet[] = [];
-
-  @Output() selectPet = new EventEmitter<number>();
+export class PetListComponent {
   
-  constructor() {}
+  constructor(private petService: PetService) {}
 
-  ngOnInit():void {
-
+  get petList(): IPet[] {
+    return this.petService.pets;
   }
 
   onClickPet(petId: number): void {
-    this.selectPet.emit(petId);
+    this.petService.onSelectPet(petId);
   }
+
 
 }
